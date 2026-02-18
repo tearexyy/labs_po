@@ -173,4 +173,11 @@ Automatic merge failed; fix conflicts and then commit the result.
    $ git branch -d lab1
    Deleted branch lab1 (was 92a8a0f).
 
+13. Создание удаленного репозитория:
+    ssh-keygen - генерация ssh-ключа
+    git remote add origin https://github.com/tearexyy/labs_po.git - добавление удаленного репозитория
+    $ git push -u origin main - загрузка изменений
+
+
+
 
