@@ -69,6 +69,12 @@ See 'git help git' for an overview of the system.
    git add .
    git commit -m "initial commit"
 
+   commit c6c72689537d6eeda8a17a6568422358ba68c8d9
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Fri Feb 6 14:48:24 2026 +0300
+
+   initial commit
+
 7. Проверка изменений git diff и git status
 
    Дарья Мокренко@DESKTOP-V1FLN27 MINGW64 ~/git_labs (main)
@@ -101,4 +107,46 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
-git diff показывает конкретные различия 
+git diff показывает конкретные различия в файлах от последнего коммита
+git status показывает какие файлы в репозитории были изменены в текущей ветке(modified)
+
+Из файла readme.md:
+Дарья Мокренко@DESKTOP-V1FLN27 MINGW64 ~/git_labs (main)
+$ git diff readme.md
+
+8. В readme.md добавим изменение, которое не было закомичено
+   $ git restore readme.md - изменение пропало в файле
+
+9. Удалим readme.md
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git restore readme.md восстановил файл
+
+9. Вывод имени ветки:
+   $ git branch
+   * main
+
+   Создание ветки:
+   git branch lab1
+   git checkout lab1 - переключились на нее
+
+   Если будут незакоммиченные изменения, переключиться не получится из-за риска потерять изменения в текущей ветке:
+   $ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        reports/lab1.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+
+
+
+
+
+
