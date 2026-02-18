@@ -144,7 +144,14 @@ error: Your local changes to the following files would be overwritten by checkou
 Please commit your changes or stash them before you switch branches.
 Aborting
 
+10. Произведем слияние веток:
+$ git merge main
+Updating fe3c59a..3cf4948
+Fast-forward
+ reports/lab1.md | 94 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 94 insertions(+)
 
+gggggggggggg
 
 
 
