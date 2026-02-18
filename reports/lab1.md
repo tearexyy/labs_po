@@ -56,3 +56,16 @@ collaborate (see also: git help workflows)
 concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
 See 'git help git' for an overview of the system.
+
+4. В текущей папке для создания новых директорий:
+   git mkdir git_labs
+   cd git_labs
+   mkdir reports
+   В файловом проводнике были созданы readme.md и lab1.md
+
+5. git init - создание репозитория
+
+6. После добавления информации о себе в файлы readme.md и lab1.md был выполнен initial commit:
+   git add .
+   git commit -m "initial commit"
+
