@@ -1,9 +1,15 @@
-Лабораторная работа 1 бебебе
+Лабораторная работа 1
 1. Установка программы
+Была установлена программа Git Bash с сайта https://git-scm.com/ для ОС Windows.
 
+2. Проверка версии
+Дарья Мокренко@DESKTOP-V1FLN27 MINGW64 ~/git_labs (lab1)
+$ git --version
+git version 2.53.0.windows.1
 
-2.Получение пдщаллала
-3. вывод справки git --help
+3. Вывод справки с помощью команды git --help
+Дарья Мокренко@DESKTOP-V1FLN27 MINGW64 ~/git_labs (lab1)
+$ git -- help
 usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
            [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
            [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
