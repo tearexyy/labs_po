@@ -144,8 +144,27 @@ error: Your local changes to the following files would be overwritten by checkou
 Please commit your changes or stash them before you switch branches.
 Aborting
 
+10. Произведем слияние веток:
+$ git merge main
+Updating fe3c59a..3cf4948
+Fast-forward
+ reports/lab1.md | 94 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 94 insertions(+)
 
+11. merge conflict
+Если одну и ту же строку изменить по-разному в двух ветках, а после попытаться их слить, будет ошибка:
 
+$ git merge main
+Auto-merging readme.md
+CONFLICT (content): Merge conflict in readme.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+<<<<<<< HEAD
+Лабораторные работы по Современным технологиям программирования 2 семестр
+=======
+Лабораторные работы по Современным технологиям программирования 1 курс
+>>>>>>> main
+выполнила: Мокренко Дарья 5130201/50302
 
 
 
