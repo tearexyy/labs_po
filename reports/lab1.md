@@ -166,5 +166,11 @@ Automatic merge failed; fix conflicts and then commit the result.
 ..>>>>>>> main
 ..выполнила: Мокренко Дарья 5130201/50302
 
+12. Проверим различия между ветками:
+   $ git diff lab1 main
+
+   удалим lab1:
+   $ git branch -d lab1
+   Deleted branch lab1 (was 92a8a0f).
 
 
