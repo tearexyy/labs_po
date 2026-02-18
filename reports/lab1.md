@@ -69,3 +69,36 @@ See 'git help git' for an overview of the system.
    git add .
    git commit -m "initial commit"
 
+7. Проверка изменений git diff и git status
+
+   Дарья Мокренко@DESKTOP-V1FLN27 MINGW64 ~/git_labs (main)
+   $ git diff
+
+   Дарья Мокренко@DESKTOP-V1FLN27 MINGW64 ~/git_labs (main)
+   $ git status
+   On branch main
+   nothing to commit, working tree clean
+
+Внесем изменения
+
+$ git diff 
+diff --git a/reports/lab1.md b/reports/lab1.md
+index 0fe618d..1caed42 100644
+--- a/reports/lab1.md
++++ b/reports/lab1.md
+@@ -69,3 +69,16 @@ See 'git help git' for an overview of the system.
+    git add .
+    git commit -m "initial commit"
++
++Внесем изменения
+
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   reports/lab1.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+git diff показывает конкретные различия 
