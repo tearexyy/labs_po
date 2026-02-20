@@ -137,7 +137,7 @@ $ git diff readme.md
    git branch lab1
    git checkout lab1 - переключились на нее
 
-      Если будут незакоммиченные изменения, переключиться не получится из-за риска потерять изменения в текущей ветке:
+   Если будут незакоммиченные изменения, переключиться не получится из-за риска потерять изменения в текущей ветке:
       $ git checkout main
       error: Your local changes to the following files would be overwritten by checkout:
       reports/lab1.md
@@ -195,7 +195,7 @@ $ git diff readme.md
    $ ls
    labs_po/
 
-16. git fetch - синхронизация с удаленным репозиторием и показ изменений
+16. git fetch - запрос обновлений из удаленного репозитория
    $ git fetch
    From https://github.com/tearexyy/labs_po
  * [new branch]      2nd-branch -> origin/2nd-branch
