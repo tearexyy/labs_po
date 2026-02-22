@@ -17,4 +17,7 @@
    2) настройки веток (branches) 
    3) add classic branch protection rule (установить правило для ветки) 
    4) Для ветки main установить защиту Require a pull request before merging
-   
+
+4. Проверка
+   На ветке main вносим изменения, 
+
