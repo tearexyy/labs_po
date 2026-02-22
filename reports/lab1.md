@@ -216,7 +216,8 @@ $ git diff readme.md
    * [new branch]      lab2-test -> lab2-test
    branch 'lab2-test' set up to track 'origin/lab2-test'.
 
-18. pull request - отправка изменений на проверку
+18. pull request - запрос на слияние/отправка изменений на проверку
+    Для проверки измененных файлов со второй ветки был создан PR с веткой main. На GitHub можно отследить изменения, сравнить их с предыдущим коммитом и добавить комментарии. 
 
 19. История коммитов git log
    $ git log
