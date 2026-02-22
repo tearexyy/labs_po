@@ -1,14 +1,12 @@
-Лабораторная работа 1
+Лабораторная работа 1. Базовая работа с git.
 1. Установка программы
    Была установлена программа Git Bash с сайта https://git-scm.com/ для ОС Windows.
 
 2. Проверка версии
-   Дарья Мокренко@DESKTOP-V1FLN27 MINGW64 ~/git_labs (lab1)
    $ git --version
    git version 2.53.0.windows.1
 
 3. Вывод справки с помощью команды git --help
-   Дарья Мокренко@DESKTOP-V1FLN27 MINGW64 ~/git_labs (lab1)
    $ git -- help
    usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
             [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
@@ -218,4 +216,111 @@ $ git diff readme.md
    * [new branch]      lab2-test -> lab2-test
    branch 'lab2-test' set up to track 'origin/lab2-test'.
 
+18. pull request - отправка изменений на проверку
+
+19. История коммитов git log
+   $ git log
+   commit ba8742806446aea09d3a3565d785fb8b550e634a (HEAD -> main, origin/main, origin/HEAD)
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Fri Feb 20 17:10:52 2026 +0300
+
+      cpp
+
+   commit 1788c2b43a18026969ba466ed5f48b1194f507a6
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Fri Feb 20 16:36:22 2026 +0300
+
+      branches
+
+   commit a1dfae8eca59e249eb376931384de24cf6c96b47 (origin/lab2-test)
+   Merge: b0883c7 39bcdcf
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Fri Feb 20 16:08:02 2026 +0300
+
+      check
+
+   commit 39bcdcf2bfd874ae4661200f47d60630472cd656 (origin/2nd-branch)
+   Author: древесина армавир <95883822+tearexyy@users.noreply.github.com>
+   Date:   Fri Feb 20 16:03:39 2026 +0300
+
+      Update readme.md group num
+
+   commit b0883c7de21a0dc89be98b370d7ba6b0c36aefed
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Thu Feb 19 00:32:06 2026 +0300
+
+      remote rep
+
+   commit 3bfb2dd15be1e698dc2e7b28e4f406e39a2c1eb4
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Thu Feb 19 00:23:54 2026 +0300
+
+      added rep
+
+   commit 92a8a0f68fbeb518a573733ff039b36e728cc618
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Wed Feb 18 23:33:18 2026 +0300
+
+      merge
+
+   commit cc013dd7b005cb369461f0c07976da2cd0c31067
+   Merge: e9dcabb 1ee0a4d
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Wed Feb 18 23:32:12 2026 +0300
+
+      merge resolving
+
+   commit e9dcabba635657e87bf80e4faea6b4b8de3470c5
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Wed Feb 18 23:25:58 2026 +0300
+
+      to check merge conflict2
+
+   commit 1ee0a4dc79aad9f52f7d0d07860a68b65e6324b1
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Wed Feb 18 23:25:34 2026 +0300
+
+      to check merge conflict
+
+   commit 3cf494852cc56af728dc2c5e280023b59b00c412
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Wed Feb 18 23:15:00 2026 +0300
+
+      point 8
+
+   commit ec8fbe9992d3f0a60870a6f2d0bb39b1bccfbbbc
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Wed Feb 18 23:00:17 2026 +0300
+
+      8 point
+
+   commit e04be78f504897188b4c187b999af476fec478b7
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Wed Feb 18 22:42:51 2026 +0300
+
+      diff checkout
+
+   commit fe3c59a60e7c94421bdaf05a3317ce7c6a030d8c
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Wed Feb 18 22:19:20 2026 +0300
+
+      merge checkout
+
+   commit 466e548e906b3c3f06b512180adc79e5ce65e842
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Fri Feb 6 15:27:04 2026 +0300
+
+      point 3
+
+   commit 719cc972b7b0add261a2cde4d04c296f13b2af9a
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Fri Feb 6 15:07:29 2026 +0300
+
+      added group number
+
+   commit c6c72689537d6eeda8a17a6568422358ba68c8d9
+   Author: tearexyy <d.v.mokrenko@gmail.com>
+   Date:   Fri Feb 6 14:48:24 2026 +0300
+
+      initial commit
 
