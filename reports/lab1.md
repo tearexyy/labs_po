@@ -56,7 +56,7 @@
    See 'git help git' for an overview of the system.
 
 4. В текущей папке для создания новых директорий:
-   git mkdir git_labs
+   mkdir git_labs
    cd git_labs
    mkdir reports
    В файловом проводнике были созданы readme.md и lab1.md
@@ -127,7 +127,7 @@ $ git diff readme.md
 
    $ git restore readme.md восстановил файл
 
-9. Вывод имени ветки:
+10. Вывод имени ветки:
    $ git branch
    * main
 
@@ -142,14 +142,14 @@ $ git diff readme.md
       Please commit your changes or stash them before you switch branches.
       Aborting
 
-10. Произведем слияние веток:
+11. Произведем слияние веток:
    $ git merge main
    Updating fe3c59a..3cf4948
    Fast-forward
    reports/lab1.md | 94 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    1 file changed, 94 insertions(+)
 
-11. merge conflict
+12. merge conflict
    Если одну и ту же строку изменить по-разному в двух ветках, а после попытаться их слить, будет ошибка:
 
    $ git merge main
@@ -164,22 +164,22 @@ $ git diff readme.md
    ..>>>>>>> main
    ..выполнила: Мокренко Дарья 5130201/50302
 
-12. Проверим различия между ветками:
+13. Проверим различия между ветками:
    $ git diff lab1 main
 
    удалим lab1:
    $ git branch -d lab1
    Deleted branch lab1 (was 92a8a0f).
 
-13. Создание удаленного репозитория:
+14. Создание удаленного репозитория:
     ssh-keygen - генерация ssh-ключа
     git remote add origin https://github.com/tearexyy/labs_po.git - добавление удаленного репозитория
     $ git push -u origin main - загрузка изменений
 
-14. pull - получаем изменения, сделанные в удаленном репозитории
+15. pull - получаем изменения, сделанные в удаленном репозитории
     $ git pull
 
-15. Клонирование репозитория во временную папку
+16. Клонирование репозитория во временную папку
    $  git clone https://github.com/tearexyy/labs_po.git
    Cloning into 'labs_po'...
    remote: Enumerating objects: 55, done.
@@ -193,13 +193,13 @@ $ git diff readme.md
    $ ls
    labs_po/
 
-16. git fetch - запрос обновлений из удаленного репозитория
+17. git fetch - запрос обновлений из удаленного репозитория
    $ git fetch
    From https://github.com/tearexyy/labs_po
  * [new branch]      2nd-branch -> origin/2nd-branch
 
 
-17. Создание ветки и установка upstream
+18. Создание ветки и установка upstream
    $ git push --set-upstream origin lab2-test
    Enumerating objects: 12, done.
    Counting objects: 100% (10/10), done.
@@ -216,10 +216,10 @@ $ git diff readme.md
    * [new branch]      lab2-test -> lab2-test
    branch 'lab2-test' set up to track 'origin/lab2-test'.
 
-18. pull request - запрос на слияние/отправка изменений на проверку
+19. pull request - запрос на слияние/отправка изменений на проверку
     Для проверки измененных файлов со второй ветки был создан PR с веткой main. На GitHub можно отследить изменения, сравнить их с предыдущим коммитом и добавить комментарии. 
 
-19. История коммитов git log
+20. История коммитов git log
    $ git log
    commit ba8742806446aea09d3a3565d785fb8b550e634a (HEAD -> main, origin/main, origin/HEAD)
    Author: tearexyy <d.v.mokrenko@gmail.com>
