@@ -9,7 +9,6 @@ Matrix::Matrix(int n1){
         this->data[i][i] = 1;
     }
 }
-
 Matrix::Matrix(int m1, int n1, double fill_value){
     m = m1;
     n = n1;
