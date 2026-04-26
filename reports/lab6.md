@@ -216,3 +216,95 @@ Total Test time (real) =   0.42 sec
 - cmake -S . -B build читает CMakeLists.txt, создаёт папку build
 - cmake --build build компилирует библиотеку, lab2 и тесты
 - ctest --output-on-failure запускает тесты.
+
+## 4. Автоматизация задач CMake в git
+В hooks/pre-commit необходимо добавить еще одну проверку:
+```
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$BRANCH" = "dev" ]; then
+    echo ">>> Запуск CMake тестов для ветки dev..."
+    
+    if [ ! -d "build" ]; then
+        cmake -S . -B build
+    fi
+    
+    cmake --build build 2>/dev/null
+    
+    ctest --test-dir build --output-on-failure
+    if [ $? -ne 0 ]; then
+        echo ">>> Тесты не пройдены! Коммит прерван."
+        exit 1
+    fi
+    
+    echo ">>> Тесты пройдены успешно."
+```
+### Тестирование для обычного коммита:
+```
+git commit -m "Test commit in dev"
+[ 17%] Built target mylib
+[ 29%] Built target lab2
+[ 41%] Built target test_basefile
+[ 52%] Built target test_base32file
+[ 64%] Built target test_rlefile
+[ 76%] Built target test_composition
+[ 88%] Built target test_base32file2
+[100%] Built target test_rlefile2
+Internal ctest changing into directory: /mnt/c/Users/Дарья Мокренко/git_labs/build
+Test project /mnt/c/Users/Дарья Мокренко/git_labs/build
+    Start 1: test_basefile
+1/6 Test #1: test_basefile ....................   Passed    0.03 sec
+    Start 2: test_base32file
+2/6 Test #2: test_base32file ..................   Passed    0.06 sec
+    Start 3: test_rlefile
+3/6 Test #3: test_rlefile .....................   Passed    0.03 sec
+    Start 4: test_composition
+4/6 Test #4: test_composition .................   Passed    0.04 sec
+    Start 5: test_base32file2
+5/6 Test #5: test_base32file2 .................   Passed    0.05 sec
+    Start 6: test_rlefile2
+6/6 Test #6: test_rlefile2 ....................   Passed    0.03 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =   0.31 sec
+>>> Тесты пройдены успешно.
+[dev 0dbdb5e] Test commit in dev
+ 1 file changed, 786 insertions(+)
+ create mode 100644 src/lab2.cpp
+```
+
+### Тестирование для merge:
+```
+git_labs (dev|MERGING)$ git commit -m "Merge report6 into dev"
+[  5%] Building CXX object src/CMakeFiles/mylib.dir/BaseFile.cpp.o
+[ 17%] Built target mylib
+[ 23%] Linking CXX executable lab2
+[ 29%] Built target lab2
+[ 41%] Built target test_basefile
+[ 52%] Built target test_base32file
+[ 64%] Built target test_rlefile
+[ 76%] Built target test_composition
+[ 88%] Built target test_base32file2
+[100%] Built target test_rlefile2
+Internal ctest changing into directory: /mnt/c/Users/Дарья Мокренко/git_labs/build
+Test project /mnt/c/Users/Дарья Мокренко/git_labs/build
+    Start 1: test_basefile
+1/6 Test #1: test_basefile ....................   Passed    0.02 sec
+    Start 2: test_base32file
+2/6 Test #2: test_base32file ..................   Passed    0.05 sec
+    Start 3: test_rlefile
+3/6 Test #3: test_rlefile .....................   Passed    0.03 sec
+    Start 4: test_composition
+4/6 Test #4: test_composition .................   Passed    0.04 sec
+    Start 5: test_base32file2
+5/6 Test #5: test_base32file2 .................   Passed    0.04 sec
+    Start 6: test_rlefile2
+6/6 Test #6: test_rlefile2 ....................   Passed    0.03 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =   0.30 sec
+>>> Тесты пройдены успешно.
+[dev a701c8a] Merge report6 into dev
+```

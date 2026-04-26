@@ -1,10 +1,10 @@
-Start testing: Apr 26 22:42 MSK
+Start testing: Apr 26 22:45 MSK
 ----------------------------------------------------------
 1/6 Testing: test_basefile
 1/6 Test: test_basefile
 Command: "/mnt/c/cmake/lab2/build/tests/test_basefile"
 Directory: /mnt/c/cmake/lab2
-"test_basefile" start time: Apr 26 22:42 MSK
+"test_basefile" start time: Apr 26 22:45 MSK
 Output:
 ----------------------------------------------------------
 
@@ -14,10 +14,10 @@ test_basefile
 тест BaseFile прошел
 
 <end of output>
-Test time =   0.03 sec
+Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"test_basefile" end time: Apr 26 22:42 MSK
+"test_basefile" end time: Apr 26 22:45 MSK
 "test_basefile" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -25,7 +25,7 @@ Test Passed.
 2/6 Test: test_base32file
 Command: "/mnt/c/cmake/lab2/build/tests/test_base32file"
 Directory: /mnt/c/cmake/lab2
-"test_base32file" start time: Apr 26 22:42 MSK
+"test_base32file" start time: Apr 26 22:45 MSK
 Output:
 ----------------------------------------------------------
 
@@ -39,10 +39,10 @@ test_base32file
 тест Base32File прошел
 
 <end of output>
-Test time =   0.06 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
 Test Passed.
-"test_base32file" end time: Apr 26 22:42 MSK
+"test_base32file" end time: Apr 26 22:45 MSK
 "test_base32file" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -50,7 +50,7 @@ Test Passed.
 3/6 Test: test_rlefile
 Command: "/mnt/c/cmake/lab2/build/tests/test_rlefile"
 Directory: /mnt/c/cmake/lab2
-"test_rlefile" start time: Apr 26 22:42 MSK
+"test_rlefile" start time: Apr 26 22:45 MSK
 Output:
 ----------------------------------------------------------
 
@@ -64,10 +64,10 @@ test_rlefile
 тест RleFile прошел
 
 <end of output>
-Test time =   0.02 sec
+Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"test_rlefile" end time: Apr 26 22:42 MSK
+"test_rlefile" end time: Apr 26 22:45 MSK
 "test_rlefile" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -75,7 +75,7 @@ Test Passed.
 4/6 Test: test_composition
 Command: "/mnt/c/cmake/lab2/build/tests/test_composition"
 Directory: /mnt/c/cmake/lab2
-"test_composition" start time: Apr 26 22:42 MSK
+"test_composition" start time: Apr 26 22:45 MSK
 Output:
 ----------------------------------------------------------
 
@@ -93,7 +93,7 @@ test_composition
 Test time =   0.04 sec
 ----------------------------------------------------------
 Test Passed.
-"test_composition" end time: Apr 26 22:42 MSK
+"test_composition" end time: Apr 26 22:45 MSK
 "test_composition" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -101,7 +101,7 @@ Test Passed.
 5/6 Test: test_base32file2
 Command: "/mnt/c/cmake/lab2/build/tests/test_base32file2"
 Directory: /mnt/c/cmake/lab2
-"test_base32file2" start time: Apr 26 22:42 MSK
+"test_base32file2" start time: Apr 26 22:45 MSK
 Output:
 ----------------------------------------------------------
 
@@ -114,10 +114,10 @@ test_base32file2
 вызов деструктора Base32File2
 тест Base32File2 прошел
 <end of output>
-Test time =   0.05 sec
+Test time =   0.04 sec
 ----------------------------------------------------------
 Test Passed.
-"test_base32file2" end time: Apr 26 22:42 MSK
+"test_base32file2" end time: Apr 26 22:45 MSK
 "test_base32file2" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -125,7 +125,7 @@ Test Passed.
 6/6 Test: test_rlefile2
 Command: "/mnt/c/cmake/lab2/build/tests/test_rlefile2"
 Directory: /mnt/c/cmake/lab2
-"test_rlefile2" start time: Apr 26 22:42 MSK
+"test_rlefile2" start time: Apr 26 22:45 MSK
 Output:
 ----------------------------------------------------------
 
@@ -139,8 +139,8 @@ test_rlefile2
 Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"test_rlefile2" end time: Apr 26 22:42 MSK
+"test_rlefile2" end time: Apr 26 22:45 MSK
 "test_rlefile2" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Apr 26 22:42 MSK
+End testing: Apr 26 22:45 MSK
