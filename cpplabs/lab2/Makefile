@@ -46,8 +46,6 @@ test: $(BUILD_DIR)/test_basefile $(BUILD_DIR)/test_base32file $(BUILD_DIR)/test_
 	./$(BUILD_DIR)/test_base32file2
 	./$(BUILD_DIR)/test_rlefile2
 
-
-
 debug: $(BUILD_DIR)/debug.out
 	gdb ./$(BUILD_DIR)/debug.out
 
