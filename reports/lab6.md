@@ -111,3 +111,108 @@ __CMake__ — это система генерации файлов сборки
 |target_compile_definitions()|Макросы|
 |add_subdirectory()|Подпроекты|
 |find_package()|Внешние пакеты|
+`sudo apt install cmake` - установка
+```
+ $ cmake --version
+cmake version 3.28.3
+```
+### Сборка и запуск
+__CMakeLists.txt:__
+```
+cmake_minimum_required(VERSION 3.15)
+project(Lab2 VERSION 1.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Библиотека из всех реализаций
+add_subdirectory(src)
+
+# Исполняемый файл
+add_executable(lab2 src/lab2.cpp)
+target_link_libraries(lab2 PRIVATE mylib)
+
+# Тесты
+enable_testing()
+add_subdirectory(tests)
+```
+__tests/CMakeLists.txt:__
+```
+function(add_test_target name source)
+    add_executable(${name} ${source})
+    target_link_libraries(${name} PRIVATE mylib)
+    add_test(NAME ${name} COMMAND ${name}
+             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+endfunction()
+
+add_test_target(test_basefile test_basefile.cpp)
+add_test_target(test_base32file test_base32file.cpp)
+add_test_target(test_rlefile test_rlefile.cpp)
+add_test_target(test_composition test_composition.cpp)
+add_test_target(test_base32file2 test_base32file2.cpp)
+add_test_target(test_rlefile2 test_rlefile2.cpp)
+```
+__src/CMakeLists.txt:__
+```
+add_library(mylib STATIC
+    BaseFile.cpp
+    mystring.cpp
+)
+
+target_include_directories(mylib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+```
+```
+darya@DESKTOP-V1FLN27 build $ cmake -S . -B build
+CMake Error: The source directory "/mnt/c/cmake/lab2/build" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.
+darya@DESKTOP-V1FLN27 build $ cd ..
+darya@DESKTOP-V1FLN27 lab2 $ cmake -S . -B build
+-- Configuring done (0.1s)
+-- Generating done (0.7s)
+-- Build files have been written to: /mnt/c/cmake/lab2/build
+darya@DESKTOP-V1FLN27 lab2 $ cmake --build build
+[ 17%] Built target mylib
+gmake[2]: Warning: File 'CMakeFiles/lab2.dir/compiler_depend.make' has modification time 0.0074 s in the future
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 29%] Built target lab2
+gmake[2]: Warning: File 'tests/CMakeFiles/test_basefile.dir/compiler_depend.make' has modification time 0.012 s in the future
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 41%] Built target test_basefile
+gmake[2]: Warning: File 'tests/CMakeFiles/test_base32file.dir/compiler_depend.make' has modification time 0.014 s in the future
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 52%] Built target test_base32file
+gmake[2]: Warning: File 'tests/CMakeFiles/test_rlefile.dir/compiler_depend.make' has modification time 0.022 s in the future
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 64%] Built target test_rlefile
+gmake[2]: Warning: File 'tests/CMakeFiles/test_composition.dir/compiler_depend.make' has modification time 0.02 s in the future
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 76%] Built target test_composition
+gmake[2]: Warning: File 'tests/CMakeFiles/test_base32file2.dir/compiler_depend.make' has modification time 0.042 s in the future
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 88%] Built target test_base32file2
+gmake[2]: Warning: File 'tests/CMakeFiles/test_rlefile2.dir/compiler_depend.make' has modification time 0.051 s in the future
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[100%] Built target test_rlefile2
+darya@DESKTOP-V1FLN27 lab2 $ cd build
+darya@DESKTOP-V1FLN27 build $ ctest --output-on-failure
+Test project /mnt/c/cmake/lab2/build
+    Start 1: test_basefile
+1/6 Test #1: test_basefile ....................   Passed    0.04 sec
+    Start 2: test_base32file
+2/6 Test #2: test_base32file ..................   Passed    0.08 sec
+    Start 3: test_rlefile
+3/6 Test #3: test_rlefile .....................   Passed    0.04 sec
+    Start 4: test_composition
+4/6 Test #4: test_composition .................   Passed    0.07 sec
+    Start 5: test_base32file2
+5/6 Test #5: test_base32file2 .................   Passed    0.08 sec
+    Start 6: test_rlefile2
+6/6 Test #6: test_rlefile2 ....................   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =   0.42 sec
+```
+- cmake -S . -B build читает CMakeLists.txt, создаёт папку build
+- cmake --build build компилирует библиотеку, lab2 и тесты
+- ctest --output-on-failure запускает тесты
