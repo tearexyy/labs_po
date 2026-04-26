@@ -215,4 +215,4 @@ Total Test time (real) =   0.42 sec
 ```
 - cmake -S . -B build читает CMakeLists.txt, создаёт папку build
 - cmake --build build компилирует библиотеку, lab2 и тесты
-- ctest --output-on-failure запускает тесты
+- ctest --output-on-failure запускает тесты.

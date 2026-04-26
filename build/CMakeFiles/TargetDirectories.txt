@@ -1,0 +1,17 @@
+/mnt/c/cmake/lab2/build/CMakeFiles/lab2.dir
+/mnt/c/cmake/lab2/build/CMakeFiles/test.dir
+/mnt/c/cmake/lab2/build/CMakeFiles/edit_cache.dir
+/mnt/c/cmake/lab2/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/cmake/lab2/build/src/CMakeFiles/mylib.dir
+/mnt/c/cmake/lab2/build/src/CMakeFiles/test.dir
+/mnt/c/cmake/lab2/build/src/CMakeFiles/edit_cache.dir
+/mnt/c/cmake/lab2/build/src/CMakeFiles/rebuild_cache.dir
+/mnt/c/cmake/lab2/build/tests/CMakeFiles/test_basefile.dir
+/mnt/c/cmake/lab2/build/tests/CMakeFiles/test_base32file.dir
+/mnt/c/cmake/lab2/build/tests/CMakeFiles/test_rlefile.dir
+/mnt/c/cmake/lab2/build/tests/CMakeFiles/test_composition.dir
+/mnt/c/cmake/lab2/build/tests/CMakeFiles/test_base32file2.dir
+/mnt/c/cmake/lab2/build/tests/CMakeFiles/test_rlefile2.dir
+/mnt/c/cmake/lab2/build/tests/CMakeFiles/test.dir
+/mnt/c/cmake/lab2/build/tests/CMakeFiles/edit_cache.dir
+/mnt/c/cmake/lab2/build/tests/CMakeFiles/rebuild_cache.dir

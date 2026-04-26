@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_composition.dir/test_composition.cpp.o -o test_composition  ../src/libmylib.a 
