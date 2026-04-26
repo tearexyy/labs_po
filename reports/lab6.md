@@ -75,3 +75,4 @@ $ git commit -m "lab6"
 ```
 ## 2. Хуки Git на стороне сервера
 Конвертировать Markdown-файл в html-файл можно с помощью Pandoc `sudo apt install pandoc`.
+4
