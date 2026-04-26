@@ -75,3 +75,39 @@ $ git commit -m "lab6"
 ```
 ## 2. Хуки Git на стороне сервера
 Конвертировать Markdown-файл в html-файл можно с помощью Pandoc `sudo apt install pandoc`.
+Был добавлен remote репозиторий.
+Для создания html файла в клон-репозиторий необходимо добавить хук post-receive:
+```
+#!/bin/sh
+
+while read oldrev newrev refname; do
+    if [ "$refname" = "refs/heads/report6" ]; then
+        cd "/c/Users/Дарья Мокренко/Desktop/hook_test"
+        git checkout -f report6
+        pandoc -s reports/lab6.md -o reports/lab6.html --metadata title="Lab 6"
+        echo ">>> HTML updated: reports/lab6.html"
+    fi
+done
+
+exit 0
+```
+`chmod +x .git/hooks/post-receive` - теперь хук исполняемый.
+`git config receive.denyCurrentBranch updateInstead` - для того, чтобы файл обновлялся при загруженных изменениях.
+`git push server report6` - пушим.  
+![](screenshots/html.png)
+
+## 3. Сборка с помощью CMake
+### Основные понятия
+__CMake__ — это система генерации файлов сборки.
+|Команда|Функция|
+|:------|:------|
+|project()|Проект|
+|add_executable()|Исполняемый файл|
+|add_library()|Библиотека|
+|target_link_libraries()|Линковка|
+|target_include_directories()|Добавить пути|
+|target_sources()|Исходники	|
+|target_compile_options()|Опции компиляции|
+|target_compile_definitions()|Макросы|
+|add_subdirectory()|Подпроекты|
+|find_package()|Внешние пакеты|
