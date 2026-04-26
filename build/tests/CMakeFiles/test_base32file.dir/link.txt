@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/test_base32file.dir/test_base32file.cpp.o -o test_base32file  ../src/libmylib.a 
