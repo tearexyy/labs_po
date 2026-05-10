@@ -1,7 +1,0 @@
-test_basefile 4 0.005543
-test_base32file 4 0.0127802
-test_rlefile 4 0.00686587
-test_composition 4 0.0111085
-test_base32file2 4 0.0110195
-test_rlefile2 4 0.00777989
----
