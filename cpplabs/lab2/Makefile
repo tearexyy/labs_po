@@ -17,9 +17,6 @@ $(BUILD_DIR)/debug.out: $(SRC_DIR)/$(MAIN_NAME).cpp $(OBJS)
 $(BUILD_DIR)/leaks.out: $(SRC_DIR)/$(MAIN_NAME).cpp $(OBJS)
 	$(CXX) -o $@ $^ -fsanitize=address
 
-$(BUILD_DIR)/test_%.o: $(TEST_DIR)/test_%.cpp | $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
 $(BUILD_DIR)/test_basefile: $(BUILD_DIR)/test_basefile.o $(OBJS)
 	$(CXX) -o $@ $^
 
@@ -38,13 +35,17 @@ $(BUILD_DIR)/test_base32file2: $(BUILD_DIR)/test_base32file2.o $(OBJS)
 $(BUILD_DIR)/test_rlefile2: $(BUILD_DIR)/test_rlefile2.o $(OBJS)
 	$(CXX) -o $@ $^
 
-test: $(BUILD_DIR)/test_basefile $(BUILD_DIR)/test_base32file $(BUILD_DIR)/test_rlefile $(BUILD_DIR)/test_composition $(BUILD_DIR)/test_rlefile2 ./$(BUILD_DIR)/test_base32file2
+$(BUILD_DIR)/test32sb: $(BUILD_DIR)/test32sb.o $(OBJS)
+	$(CXX) -o $@ $^
+
+test: $(BUILD_DIR)/test_basefile $(BUILD_DIR)/test_base32file $(BUILD_DIR)/test_rlefile $(BUILD_DIR)/test_composition $(BUILD_DIR)/test_rlefile2 ./$(BUILD_DIR)/test_base32file2 ./$(BUILD_DIR)/test32sb
 	./$(BUILD_DIR)/test_basefile
 	./$(BUILD_DIR)/test_base32file
 	./$(BUILD_DIR)/test_rlefile
 	./$(BUILD_DIR)/test_composition
 	./$(BUILD_DIR)/test_base32file2
 	./$(BUILD_DIR)/test_rlefile2
+	./$(BUILD_DIR)/test32sb
 
 debug: $(BUILD_DIR)/debug.out
 	gdb ./$(BUILD_DIR)/debug.out

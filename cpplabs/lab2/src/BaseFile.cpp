@@ -464,10 +464,8 @@ size_t RleFile::read(void* buf, size_t max_bytes) {
                 total_decoded++;
             }
             else {
-                if (m_leftover_size < 5) {
-                    m_leftover[m_leftover_size] = current;  // Обе строки под условием
-                    m_leftover_size++;
-                }
+                m_leftover[m_leftover_size] = current;
+                m_leftover_size++;
             }
         }
         m_leftover_pos = 0; // позиция leftover на начло
@@ -817,10 +815,8 @@ size_t RleFile2::read(void* buf, size_t max_bytes) {
                 total_decoded++;
             }
             else {
-                if (m_leftover_size < 5) {
-                    m_leftover[m_leftover_size] = current;
-                        m_leftover_size++;
-                }
+                m_leftover[m_leftover_size] = current;
+                    m_leftover_size++;
             }
         }
         m_leftover_pos = 0; // позиция leftover на начло

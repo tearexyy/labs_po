@@ -66,7 +66,7 @@ public:
 
 class RleFile : public BaseFile {
     private:
-    char m_leftover[5];
+    char m_leftover[256];
     int m_leftover_size;
     int m_leftover_pos;
 public:
@@ -106,7 +106,7 @@ public:
 
 class RleFile2 : public IFile {
     IFile* file;
-    char m_leftover[5];
+    char m_leftover[256];
     int m_leftover_size;
     int m_leftover_pos;
 public:
