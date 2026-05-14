@@ -138,3 +138,13 @@ Last login: Wed May 13 12:15:03 2026 from 10.0.2.2
 ![](screenshots7/nopass.png) 
 Теперь, если проверить вход по паролю, доступ будет отклонен:
 `ssh -p 1000 -o PreferredAuthentications=password daria@localhost` -> `daria@localhost: Permission denied (publickey).`, но обычное подключение `ssh -p 1000 daria@localhost` работает
+
+## Настройка сессии для другого пользователя
+```
+sudo adduser user  
+sudo mkdir -p /home/user/.ssh - создание директории для SSH-ключей
+sudo chmod 700 /home/user/.ssh
+sudo nano /home/user/.ssh/authorized_keys - добавление публичного ключа
+sudo chmod 600 /home/user/.ssh/authorized_keys
+sudo chown -R user:user /home/user/.ssh
+```
