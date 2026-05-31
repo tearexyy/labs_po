@@ -27,6 +27,7 @@ public:
 };
 
 class List {
+    
     struct Node { // структура, так как вес поля публичные
         Node* pPrev; //указатель на пред.
         Node* pNext; //указаетль на след.
@@ -40,7 +41,23 @@ class List {
     Node Tail;
     size_t m_size;
 
+    void swap_data(Node* a, Node* b);
+    void quick_sort(Node* left, Node* right);
+
 public:
+    class Iterator {
+        private:
+            Node* current;
+        public:
+            Iterator(Node* node = nullptr);
+            bool operator!=(const Iterator& other) const;
+            Iterator& operator++();
+            Circle& operator*();
+            Circle* operator->();
+        };
+        
+    Iterator begin();
+    Iterator end();
     List();
     void add_front(const Circle& c);
     void add_back(const Circle& c);
@@ -49,8 +66,6 @@ public:
     void clear();
     size_t size();
     bool empty();
-    void swap_data(Node* a, Node* b);
-    void quick_sort(Node* left, Node* right);
     void sort();
     void sort_reverse(); // отсортированный список в обратном порядке
     void reverse(); // список в обратном порядке
@@ -60,5 +75,7 @@ public:
     ~List();
     List& operator=(const List& other);
     Circle& index_find(int index);
+    // TODO: чем вы пользовались в 3 работе, чтобы предоставить доступ к эл-там коллекции, не нарушая инкапсуляцию?
+    // TODO: сделать здесь так же
     List(const List& other);
 };

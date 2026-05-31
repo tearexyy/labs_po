@@ -238,3 +238,32 @@ List::List(const List& other):List(){
         p = p->pNext;
     }
 }
+
+List::Iterator::Iterator(Node* node):current(node){}
+
+bool List::Iterator::operator!=(const Iterator& other) const {
+    return current != other.current;
+}
+
+List::Iterator& List::Iterator::operator++() {
+    if (current != nullptr) {
+        current = current->pNext;
+    }
+    return *this;
+}
+
+Circle& List::Iterator::operator*() {
+    return current->m_Data;
+}
+
+Circle* List::Iterator::operator->() {
+    return &current->m_Data;
+}
+
+List::Iterator List::begin() {
+    return Iterator(Head.pNext);
+}
+
+List::Iterator List::end() {
+     return Iterator(&Tail);
+}

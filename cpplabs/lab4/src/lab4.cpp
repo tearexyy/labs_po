@@ -55,5 +55,12 @@ int main(){
         std:: cout << "список не пустой\n";
     }
     
+    List list1;
+    list1.add_back(Circle(3, 3, 2));
+    list1.add_back(Circle(3, 5, 2));
+    for (auto it = list1.begin(); it != list1.end(); ++it) {
+    std::cout << "Радиус: " << it->get_radius() << ", Площадь: " << it->area() << '\n';
+}
+    
     return 0;
 }
