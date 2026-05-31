@@ -3,7 +3,7 @@
 class Point{
     double x;
     double y;
-public:
+public: 
     Point();
     Point(double a, double b);
     double get_x() const;
